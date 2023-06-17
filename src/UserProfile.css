@@ -1,0 +1,69 @@
+.user-profile-container {
+    margin: 20px auto;
+    max-width: 100vw;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+  }
+  
+  .user-profile-title {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .user-profile-form {
+    display: grid;
+    gap: 10px;
+  }
+  
+  .user-profile-label {
+    font-weight: bold;
+  }
+  
+  .user-profile-input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #fff;
+  }
+  
+  .endereco-item {
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .endereco-item div{
+    margin-right: 10px;
+  }
+
+  .button-row {
+    /* Estilos da linha de botões */
+    margin-top: 20px;
+  }
+  
+  .edit-button,
+  .back-link {
+    /* Estilos comuns para o botão e o link */
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-button:hover,
+  .back-link:hover {
+    /* Estilos ao passar o mouse */
+    background-color: #0056b3;
+  }
