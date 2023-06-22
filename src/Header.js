@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className="header">
       <nav className="navbar">
-        <a href="#" className="nav-item">
+        <a href="/" className="nav-item">
           Home
         </a>
         <a href="#" className="nav-item">

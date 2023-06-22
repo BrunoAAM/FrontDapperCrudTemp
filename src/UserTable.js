@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./UserTable.css";
 
 function UserTable() {
   const [usuarios, setUsuarios] = useState([]);
@@ -28,6 +29,25 @@ function UserTable() {
       });
   };
 
+  const deletarUsuario = (id) => {
+    fetch(`https://localhost:44364/api/usuarios/${id}`, { method: "delete" })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro ao excluir o usuário");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        // Remover o usuário excluído do estado local
+        setUsuarios((prevUsuarios) =>
+          prevUsuarios.filter((usuario) => usuario.id !== id)
+        );
+      })
+      .catch((error) => {
+        console.error(error);
+        // Lidar com erros de exclusão aqui, se necessário
+      });
+  };
   const handleSort = (column) => {
     const newSortOrder = { ...sortOrder };
     newSortOrder[column] = newSortOrder[column] === "asc" ? "desc" : "asc";
@@ -59,6 +79,10 @@ function UserTable() {
   return (
     <div className="container">
       <h2>Lista de Usuários</h2>
+      <Link to="/cadastro-usuario" className="btn-cadastrar-usuario">
+        Cadastrar Usuário
+      </Link>
+
       <table className="user-table">
         <thead>
           <tr>
@@ -79,10 +103,18 @@ function UserTable() {
               <td>{usuario.cpf}</td>
               <td>{usuario.contato?.celular}</td>
               <td>
-              <Link to={`/profile/${usuario.id}`} className="action-link" title="Editar">
-                <i className="fas fa-pencil-alt"></i>
-              </Link>
-                <button className="action-button" title="Excluir">
+                <Link
+                  to={`/profile/${usuario.id}`}
+                  className="action-link"
+                  title="Editar"
+                >
+                  <i className="fas fa-pencil-alt"></i>
+                </Link>
+                <button
+                  className="action-button"
+                  title="Excluir"
+                  onClick={() => deletarUsuario(usuario.id)}
+                >
                   <i className="fas fa-trash-alt"></i>
                 </button>
               </td>
