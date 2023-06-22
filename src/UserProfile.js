@@ -26,8 +26,7 @@ function UserProfile() {
       })
       .catch((error) => {
         console.error(error);
-        // Aqui você pode definir um estado para indicar que ocorreu um erro
-        // e mostrar uma mensagem de erro para o usuário
+  
       });
   };
 
@@ -48,12 +47,11 @@ function UserProfile() {
           throw new Error("Erro ao atualizar o usuário");
         }
         setModoEdicao(false);
-        fetchUsuario(id); // Atualiza os dados do usuário após a atualização
+        fetchUsuario(id); 
       })
       .catch((error) => {
         console.error(error);
-        // Aqui você pode definir um estado para indicar que ocorreu um erro
-        // e mostrar uma mensagem de erro para o usuário
+        
       });
   };
   const handleCancelarClick = () => {

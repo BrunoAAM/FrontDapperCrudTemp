@@ -24,8 +24,7 @@ function UserTable() {
       .then((data) => setUsuarios(data))
       .catch((error) => {
         console.error(error);
-        // Aqui você pode definir um estado para indicar que ocorreu um erro
-        // e mostrar uma mensagem de erro para o usuário
+       
       });
   };
 
@@ -38,14 +37,14 @@ function UserTable() {
         return response.json();
       })
       .then((data) => {
-        // Remover o usuário excluído do estado local
+      
         setUsuarios((prevUsuarios) =>
           prevUsuarios.filter((usuario) => usuario.id !== id)
         );
       })
       .catch((error) => {
         console.error(error);
-        // Lidar com erros de exclusão aqui, se necessário
+       
       });
   };
   const handleSort = (column) => {

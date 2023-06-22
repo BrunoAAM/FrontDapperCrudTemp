@@ -86,7 +86,7 @@ const CriarUsuario = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Extrair valores do objeto de usuário
+
     const {
       nome,
       email,
@@ -101,9 +101,7 @@ const CriarUsuario = () => {
       enderecosEntrega,
     } = usuario;
 
-    // Formatar a data de nascimento usando o Moment.js
 
-    // Construir o objeto de usuário com os dados formatados
     const usuarioData = {
       nome,
       email,
@@ -118,7 +116,7 @@ const CriarUsuario = () => {
       enderecosEntrega,
     };
 
-    // Envie o usuário para a API usando o fetch
+
     fetch("https://localhost:44364/api/usuarios", {
       method: "POST",
       headers: {
@@ -157,7 +155,7 @@ const CriarUsuario = () => {
       })
       .catch((error) => {
         console.error("Erro ao cadastrar usuário:", error);
-        // Trate o erro de acordo com as necessidades do seu aplicativo
+       
       });
   };
 
