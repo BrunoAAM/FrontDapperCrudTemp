@@ -13,7 +13,7 @@ function UserProfile() {
   }, [id]);
 
   const fetchUsuario = (id) => {
-    fetch(`https://localhost:44364/api/usuarios/${id}`)
+    fetch(`https://648d9b912de8d0ea11e807dc.mockapi.io/USUARIO/${id}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Erro ao obter o usuário");
@@ -26,7 +26,7 @@ function UserProfile() {
       })
       .catch((error) => {
         console.error(error);
-  
+
       });
   };
 
@@ -41,17 +41,17 @@ function UserProfile() {
       body: JSON.stringify(usuarioEditado),
     };
 
-    fetch(`https://localhost:44364/api/usuarios`, requestOptions)
+    fetch(`https://648d9b912de8d0ea11e807dc.mockapi.io/USUARIO`, requestOptions)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Erro ao atualizar o usuário");
         }
         setModoEdicao(false);
-        fetchUsuario(id); 
+        fetchUsuario(id);
       })
       .catch((error) => {
         console.error(error);
-        
+
       });
   };
   const handleCancelarClick = () => {
@@ -261,7 +261,7 @@ function UserProfile() {
                 <div>
                   <label className="user-profile-label" >Nome do Endereço:</label>
                   <input
-                  className="user-profile-input"
+                    className="user-profile-input"
                     type="text"
                     value={endereco?.nomeEndereco}
                     disabled={!modoEdicao}
@@ -274,7 +274,7 @@ function UserProfile() {
                 <div>
                   <label className="user-profile-label">CEP:</label>
                   <input
-                  className="user-profile-input"
+                    className="user-profile-input"
                     type="text"
                     value={endereco?.cep}
                     disabled={!modoEdicao}
@@ -287,7 +287,7 @@ function UserProfile() {
                 <div>
                   <label className="user-profile-label">Estado:</label>
                   <input
-                  className="user-profile-input"
+                    className="user-profile-input"
                     type="text"
                     value={endereco?.estado}
                     disabled={!modoEdicao}
@@ -300,7 +300,7 @@ function UserProfile() {
                 <div>
                   <label className="user-profile-label">Cidade:</label>
                   <input
-                  className="user-profile-input"
+                    className="user-profile-input"
                     type="text"
                     value={endereco?.cidade}
                     disabled={!modoEdicao}
@@ -313,7 +313,7 @@ function UserProfile() {
                 <div>
                   <label className="user-profile-label">Bairro:</label>
                   <input
-                  className="user-profile-input"
+                    className="user-profile-input"
                     type="text"
                     value={endereco?.bairro}
                     disabled={!modoEdicao}
@@ -326,7 +326,7 @@ function UserProfile() {
                 <div>
                   <label className="user-profile-label">Endereço:</label>
                   <input
-                  className="user-profile-input"
+                    className="user-profile-input"
                     type="text"
                     value={endereco?.endereco}
                     disabled={!modoEdicao}
@@ -339,7 +339,7 @@ function UserProfile() {
                 <div>
                   <label className="user-profile-label">Número:</label>
                   <input
-                  className="user-profile-input"
+                    className="user-profile-input"
                     type="text"
                     value={endereco?.numero}
                     disabled={!modoEdicao}
@@ -352,7 +352,7 @@ function UserProfile() {
                 <div>
                   <label className="user-profile-label">Complemento:</label>
                   <input
-                  className="user-profile-input"
+                    className="user-profile-input"
                     type="text"
                     value={endereco?.complemento}
                     disabled={!modoEdicao}

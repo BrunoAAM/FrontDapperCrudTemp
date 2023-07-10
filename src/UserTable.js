@@ -14,7 +14,7 @@ function UserTable() {
   }, []);
 
   const fetchUsuarios = () => {
-    fetch("https://localhost:44364/api/usuarios")
+    fetch("https://648d9b912de8d0ea11e807dc.mockapi.io/USUARIO")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Erro ao obter os usuários");
@@ -24,12 +24,12 @@ function UserTable() {
       .then((data) => setUsuarios(data))
       .catch((error) => {
         console.error(error);
-       
+
       });
   };
 
   const deletarUsuario = (id) => {
-    fetch(`https://localhost:44364/api/usuarios/${id}`, { method: "delete" })
+    fetch(`https://648d9b912de8d0ea11e807dc.mockapi.io/USUARIO/${id}`, { method: "delete" })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Erro ao excluir o usuário");
@@ -37,14 +37,14 @@ function UserTable() {
         return response.json();
       })
       .then((data) => {
-      
+
         setUsuarios((prevUsuarios) =>
           prevUsuarios.filter((usuario) => usuario.id !== id)
         );
       })
       .catch((error) => {
         console.error(error);
-       
+
       });
   };
   const handleSort = (column) => {

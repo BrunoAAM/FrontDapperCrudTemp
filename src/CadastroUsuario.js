@@ -117,7 +117,7 @@ const CriarUsuario = () => {
     };
 
 
-    fetch("https://localhost:44364/api/usuarios", {
+    fetch("https://648d9b912de8d0ea11e807dc.mockapi.io/usuario", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -155,13 +155,13 @@ const CriarUsuario = () => {
       })
       .catch((error) => {
         console.error("Erro ao cadastrar usuário:", error);
-       
+
       });
   };
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
-        <h2 className="form-section">Dados Cadastrais</h2>
+      <h2 className="form-section">Dados Cadastrais</h2>
       <div className="form-group">
         <label htmlFor="nome" className="form-label">
           Nome:
